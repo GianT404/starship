@@ -1,0 +1,47 @@
+add_newline = true
+
+format = """
+╭─$os[](fg:#ffffff) $directory$git_branch$git_status$git_state$git_metrics
+╰─$character
+"""
+
+right_format = """$cmd_duration$time"""
+
+[os]
+disabled = false
+style = "bg:#ffffff fg:#000000"
+format = "[](fg:#ffffff)[$symbol]($style)"
+
+[os.symbols]
+Arch = " "
+
+[directory]
+style = "fg:#ffffff"
+format = "[ $path ]($style)"
+truncation_length = 0 
+truncation_symbol = "~"
+truncate_to_repo = false
+
+[git_branch]
+symbol = "󰘬"
+style = "fg:#a6adc8"
+format = "[$symbol $branch]($style)"
+
+[git_status]
+style = "fg:#a6adc8"
+format = '[( $all_status$ahead_behind)]($style)'
+
+[time]
+disabled = false
+time_format = "%T"
+style = "fg:#585b70"
+format = "$time "
+
+[cmd_duration]
+min_time = 500
+style = "fg:#585b70"
+format = "󱎫 $duration "
+
+[character]
+success_symbol = " [❯](fg:#ffffff)"
+error_symbol = " [❯](fg:#cc0403)"
