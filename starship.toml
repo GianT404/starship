@@ -1,7 +1,7 @@
 add_newline = true
 
 format = """
-╭─$os[](fg:#ffffff)$directory$git_branch$git_status$git_state$git_metrics$fill$cmd_duration$time
+╭─$os$directory$git_branch$git_status$git_state$git_metrics$fill$cmd_duration$time
 ╰─$character
 """
 
@@ -11,11 +11,11 @@ style = "fg:#585b70"
 
 [os]
 disabled = false
-style = "bg:#ffffff fg:#000000"
-format = "[](fg:#ffffff)[$symbol]($style)"
+style = "fg:#fff"
+format = "[$symbol]($style)"
 
 [os.symbols]
-Arch = " "
+Arch = "  "
 
 [directory]
 style = "fg:#ffffff"
@@ -35,12 +35,12 @@ format = '[( $all_status$ahead_behind)]($style)'
 
 [time]
 disabled = false
-time_format = "%T"
+time_format = "%T "
 style = "fg:#585b70"
 format = "$time "
 
 [cmd_duration]
-min_time = 500
+min_time = 1000
 style = "fg:#585b70"
 format = "󱎫 $duration "
 
